@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanban</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>📋 Kanban</h1>
+  <div class="add-bar">
+    <input type="text" id="input-card" placeholder="Nova tarefa..." maxlength="200" autocomplete="off" />
+    <select id="sel-prio">
+      <option value="media">Média</option>
+      <option value="baixa">Baixa</option>
+      <option value="alta">Alta</option>
+      <option value="urgente">Urgente</option>
+    </select>
+    <button class="btn-add" onclick="adicionarCard()">+ Adicionar</button>
+  </div>
+</header>
+
+<div class="stats">
+  <span>📌 A Fazer: <strong id="stat-todo">0</strong></span>
+  <span>⚙️ Fazendo: <strong id="stat-doing">0</strong></span>
+  <span>✅ Concluído: <strong id="stat-done">0</strong></span>
+  <span>📊 Total: <strong id="stat-total">0</strong></span>
+</div>
+
+<main>
+  <div class="coluna" data-id="todo">
+    <div class="coluna-header">
+      📋 A Fazer
+      <span class="badge" id="badge-todo">0</span>
+    </div>
+    <div class="cards-area" id="area-todo"
+         ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event)">
+    </div>
+  </div>
+
+  <div class="coluna" data-id="doing">
+    <div class="coluna-header">
+      ⚙️ Fazendo
+      <span class="badge" id="badge-doing">0</span>
+    </div>
+    <div class="cards-area" id="area-doing"
+         ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event)">
+    </div>
+  </div>
+
+  <div class="coluna" data-id="done">
+    <div class="coluna-header">
+      ✅ Concluído
+      <span class="badge" id="badge-done">0</span>
+    </div>
+    <div class="cards-area" id="area-done"
+         ondragover="dragOver(event)" ondragleave="dragLeave(event)" ondrop="drop(event)">
+    </div>
+  </div>
+</main>
+
+<footer>Arraste para mover &nbsp;·&nbsp; Duplo clique para editar &nbsp;·&nbsp; ✕ para excluir</footer>
+
+<div id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
