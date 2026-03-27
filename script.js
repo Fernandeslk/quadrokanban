@@ -24,7 +24,7 @@ function carregar() {
   }
 }
 
-/* ── UTILS ── */
+/* ── utils ── */
 function uid() {
   return Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
 }
@@ -42,7 +42,7 @@ function labelPrio(p) {
   return { urgente:'Urgente', alta:'Alta', media:'Media', baixa:'Baixa' }[p] || p;
 }
 
-/* ── TOAST ── */
+/* ── toast── */
 function toast(msg) {
   var el = document.getElementById('toast');
   el.textContent = msg;
@@ -51,7 +51,6 @@ function toast(msg) {
   toastTimer = setTimeout(function() { el.classList.remove('show'); }, 2000);
 }
 
-/* ── RENDER ── */
 function render() {
   ['todo','doing','done'].forEach(function(col) {
     document.getElementById('area-' + col).innerHTML = '';
