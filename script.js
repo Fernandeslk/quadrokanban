@@ -106,7 +106,7 @@ function criarCard(c) {
 
   btnE.onclick = function() { editar(p, c.id); };
 
-  /* data */
+  /* data*/
   var dataEl = document.createElement('div');
   dataEl.className = 'card-data';
   dataEl.textContent = dataRelativa(c.ts || Date.now());
