@@ -97,7 +97,7 @@ function criarCard(c) {
   top.appendChild(tag);
   top.appendChild(acoes);
 
-  /* texto */
+  /* texto*/
   var p = document.createElement('p');
   p.className = 'card-texto';
   p.textContent = c.texto;
