@@ -2,7 +2,7 @@ var cards = [];
 var arrastando = null;
 var toastTimer;
 
-/* ── STORAGE ── */
+/* ── storage ── */
 function salvar() {
   localStorage.setItem('kanban-simples', JSON.stringify(cards));
 }
